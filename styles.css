@@ -1,0 +1,497 @@
+/* General Styles */
+body {
+  font-family: "Open Sans", "Helvetica Neue", Arial, sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+#top-bar {
+  background-color: #054822;
+  color: #fff;
+  padding: 10px 0;
+  text-align: right;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+}
+
+#topinfo ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#topinfo ul li {
+  display: inline;
+  margin: 0 10px;
+  font-size: 14px;
+}
+
+#bg-image {
+  background-image: url("background3-1.jpg");
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+}
+
+#wrapper {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  justify-content: center;
+}
+
+#left {
+  position: fixed; /* This makes the left section stay in place */
+  top: 60px; /* Aligns it to the top of the viewport */
+  left: 235px; /* Aligns it to the left of the viewport */
+  width: 170px;
+  text-align: right;
+  margin-right: 20px;
+  background-color: green; /* Match the background color of the body */
+  z-index: 1000; /* Ensures it stays above other content */
+  overflow-y: auto; /* Allows scrolling within the left section if content overflows */
+  opacity: 0.95;
+}
+
+#contentwrap {
+  margin-left: 200px; /* Adds space to the left to prevent content from being hidden behind the fixed left section */
+  padding: 20px; /* Optional: Adds some padding to the content */
+}
+
+#logo img {
+  max-width: 200px;
+  height: 90px;
+  background-color: #14ac29;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+#topnavi ul {
+  padding: 0;
+  margin: 0;
+  display: block;
+  flex-direction: column;
+  align-items: center;
+}
+
+#topnavi ul li {
+  margin: 0; /* Remove gaps between all items */
+  padding: 0;
+}
+
+#topnavi ul li:first-child {
+  margin-top: 20px; /* Add space above the first option */
+}
+
+#topnavi ul li:last-child {
+  margin-bottom: 30px; /* Add space below the last option */
+}
+
+#topnavi ul li {
+  margin: 5px 0;
+}
+
+#topnavi ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+#contentwrap {
+  width: 80%;
+  padding-left: 20px;
+  width: auto;
+}
+
+.Open-Close {
+  margin: 0 auto 20px auto; /* Center the box and add space below */
+  padding-left: 170px;
+  padding-right: 170px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+  line-height: 175%;
+  background-color: #14ac29;
+  width: 750px; /* Match the slideshow width */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  opacity: 0.9;
+}
+
+#slideshow img {
+  width: 700px;
+  height: 340px;
+  border: 20px solid white;
+  box-sizing: content-box;
+  display: none;
+  opacity: 0;
+  z-index: 1;
+}
+
+#slideshow img.active {
+  display: block;
+  opacity: 1;
+  z-index: 2;
+}
+
+.menu-section {
+  position: relative; /* Needed for positioning the pseudo-element */
+  background-color: #fff;
+  padding: 30px;
+  align-items: center;
+  margin: 20px 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  opacity: 0.9;
+}
+
+.menu-section::before {
+  content: "";
+  position: absolute;
+  top: 12px; /* Distance from the top edge */
+  left: 12px; /* Distance from the left edge */
+  right: 12px; /* Distance from the right edge */
+  bottom: 12px; /* Distance from the bottom edge */
+  border: 2px solid darkgreen; /* Inner border color and thickness */
+  pointer-events: none; /* Allows clicks through the border */
+}
+
+.menu-section::after {
+  content: "";
+  position: absolute;
+  top: 7px; /* Distance from the top edge */
+  left: 7px; /* Distance from the left edge */
+  right: 7px; /* Distance from the right edge */
+  bottom: 7px; /* Distance from the bottom edge */
+  border: 3px solid darkgreen; /* Inner border color and thickness */
+  pointer-events: none; /* Allows clicks through the border */
+}
+
+.menu-section h2 {
+  text-align: center;
+  color: darkgreen;
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+.widget-area {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.widget {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: calc(50% - 10px);
+}
+
+.widget h3 {
+  text-align: center;
+  color: #a92c2c;
+  text-transform: uppercase;
+}
+
+.gallery-widget ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 10px;
+}
+
+.gallery-widget ul li img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+#copyright {
+  text-align: left;
+  padding: 20px 0;
+  color: #000000;
+}
+
+@media (max-width: 1500px) {
+  #wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #top-bar {
+    z-index: 10;
+    text-align: center;
+  }
+
+  #left {
+    position: static;
+    width: 100px; /* Adjust the width for mobile */
+    text-align: center;
+    height: 550px;
+    overflow: hidden;
+    margin-top: 20px;
+    top: auto;
+    transform: translateY(35px); /* Moves it down smoothly */
+    z-index: 5;
+    opacity: 0.95;
+  }
+
+  /* NAVBAR CONTROLS */
+  #topnavi {
+    width: 200px; /* Adjust the width */
+    max-width: 1200px; /* Set a max width */
+    text-align: center;
+    padding: 10px 0;
+    background-color: green; /* Change background color if needed */
+  }
+
+  #topnavi ul {
+    flex-direction: column;
+    align-items: center;
+    padding-left: 0;
+  }
+
+
+  /* NAVBAR OPTION SIZE & DIMENSIONS */
+  #topnavi ul li a {
+    display: block;
+    padding: 15px; /* Adjust padding for option size */
+    font-size: 18px; /* Adjust text size */
+    font-weight: bold;
+    color: white;
+    background-color: green; /* Change background color */
+    text-align: center;
+    width: 100%;
+  }
+
+  #topnavi ul li a:hover {
+    background-color: #0b5e2a;
+  }
+
+  /* CONTENT WRAPPING */
+  #contentwrap {
+    max-width: 300px;
+    margin-left: 0;
+    padding: 20px;
+  }
+
+
+  .menu-section {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .Open-Close {
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-top: 10px;
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+    line-height: 175%;
+    background-color: #14ac29;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    justify-content: center;
+    transform: translateY(15px); /* Moves it down smoothly */
+  }
+
+  .menu-section {
+    background-color: #fff;
+    padding-right: 20px;
+    margin: 20px 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    align-items: center;
+    text-align: center;
+  }
+
+  .menu-section {
+    background-color: #fff;
+    padding: 30px;
+    align-items: center;
+    margin: 20px 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80%; /* Optional: set a max width or a percentage to control width */
+    max-width: 800px; /* Optional: to prevent the container from getting too wide */
+  }
+
+    .menu-item-description {
+    font-size: 12px;
+    color: #666;
+    text-align: left;
+    font-weight: bold;
+    color: darkgreen;
+    margin-bottom: 5px;
+  }
+
+
+  .menu-section h2 {
+    text-align: center;
+    color: darkgreen;
+  }
+
+  .menu-item {
+    display: flex;
+    padding: 10px 0;
+  }
+
+  .menu-item:last-child {
+    border-bottom: none;
+  }
+}
+
+@media (max-width: 768px) {
+  #wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #top-bar {
+    z-index: 10;
+    text-align: center;
+  }
+
+  #left {
+    position: static;
+    max-width: 300px; /* Smaller width for mobile */
+    text-align: center;
+    height: auto; /* Let height adjust dynamically */
+    overflow: hidden;
+    margin-top: 15px;
+    top: auto;
+    transform: translateY(30px); /* Smaller movement */
+    z-index: 5;
+    opacity: 0.95;
+  }
+
+  /* NAVBAR CONTROLS */
+  #topnavi {
+    width: 100%; /* Full width for mobile */
+    text-align: center;
+    padding: 10px 0;
+    background-color: green;
+  }
+
+  #topnavi ul {
+    flex-direction: column;
+    align-items: center;
+    padding-left: 5;
+  }
+
+
+  /* NAVBAR OPTION SIZE & DIMENSIONS */
+  #topnavi ul li a {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: green;
+    text-align: center;
+    width: 100%;
+  }
+
+  #topnavi ul li a:hover {
+    background-color: #0b5e2a;
+  }
+
+  /* CONTENT WRAPPING */
+  #contentwrap {
+    width: 100%;
+    max-width: 100%; /* Slightly wider for better fit */
+    margin-left: 0;
+    padding: 15px;
+  }
+
+  #slideshow img {
+    max-width: 90%;
+    max-height: 180px;
+    border: 5px solid white;
+    box-sizing: border-box;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 4s ease-in-out;
+    z-index: 1;
+  }
+
+  #slideshow img.active {
+    opacity: 1;
+    justify-content: center;
+    z-index: 2;
+  }
+
+  #slideshow {
+    position:relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
+    max-width: 320px;
+    max-height: 300px;
+    overflow: hidden;
+    margin-left: 40px;
+  }
+
+  .menu-section {
+    width: 100%;
+    max-width: 320px;
+    margin: 10px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+
+  .Open-Close {
+    padding: 10px 20px;
+    margin-top: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    background-color: #14ac29;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    transform: translateY(10px);
+  }
+
+  .menu-section h2 {
+    font-size: 20px;
+    color: darkgreen;
+  }
+
+  .menu-item-description {
+    font-size: 12px;
+    color: #666;
+    text-align: left;
+    font-weight: 400;
+    color: darkgreen;
+    margin-bottom: 5px;
+  }
+
+  .menu-item {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    padding: 8px 0;
+  }
+
+  .menu-item:last-child {
+    border-bottom: none;
+  }
+}

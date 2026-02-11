@@ -1,0 +1,1997 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stoney's Grill</title>
+    <meta name="description" content="Stoney's Grill in Schenectady offers classic American comfort food and authentic Indian cuisine. A warm, inviting local hangout for over 40 years.">
+    <link rel="icon" type="image/png" sizes="32x32" href="favcon.png"/>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-green: #14ac29;
+            --dark-green: #0e7a1d;
+            --deep-forest: #01270a;
+            --cream: #fdfbf7;
+            --warm-white: #f8f6f1;
+            --charcoal: #2c2c2c;
+            --accent-gold: #c9a961;
+            --text-dark: #1a1a1a;
+            --text-muted: #666666;
+            --border-light: #e5e5e5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Lora', Georgia, serif;
+            color: var(--text-dark);
+            line-height: 1.7;
+            background-color: var(--cream);
+            overflow-x: hidden;
+        }
+
+        /* Header & Navigation */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background:#1a4d2e;
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: transparent;
+            gap: 2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            position: absolute;
+            left: 2rem;
+        }
+
+        .logo img {
+            height: 60px;
+            width: auto;
+        }
+
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--deep-forest);
+            letter-spacing: -0.5px;
+        }
+        
+        .main-nav {
+            display: flex;
+            gap: 0.3rem;
+            list-style: none;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+            padding-left: 180px;
+        }
+
+        .main-nav a {
+            text-decoration: none;
+            color:#ffff;
+            padding: 0.6rem 0.8rem;
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+            position: relative;
+            white-space: nowrap;
+        }
+        
+        .main-nav a:hover,
+        .main-nav a.active {
+            color: var(--primary-green);
+            background: rgba(20, 172, 41, 0.08);
+        }
+
+        .cta-button {
+            background: var(--primary-green);
+            color: white !important;
+            padding: 0.6rem 1.2rem !important;
+            border-radius: 8px;
+            font-weight: 600;
+            box-shadow: none;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: var(--dark-green);
+            transform: none;
+            box-shadow: 0 2px 8px rgba(20, 172, 41, 0.2);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+        /* Hero Section */
+        .hero {
+
+            margin-top: 50px;
+            padding-top: 0;  /* Add this line */
+            background: linear-gradient(135deg, var(--deep-forest) 0%, #1a4d2e 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80"><path d="M0 0h80v80H0z" fill="none"/><path d="M0 0l40 40M40 0L0 40m80-40L40 40m40 0L40 80M0 80l40-40" stroke="rgba(255,255,255,0.03)" stroke-width="1"/></svg>') repeat;
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            font-weight: 400;
+        }
+
+        .hero-info {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            margin-top: 2.5rem;
+            font-size: 1.1rem;
+        }
+
+        .hero-info-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .hero-info-item i {
+            color: var(--accent-gold);
+            font-size: 1.3rem;
+        }
+
+        /* Welcome Section */
+        .welcome-section {
+            padding: 4rem 2rem;
+            background: var(--warm-white);
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .welcome-section p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: var(--text-dark);
+            margin-bottom: 2rem;
+        }
+
+        /* Slideshow Section */
+        .slideshow-section {
+            padding: 4rem 2rem;
+            background: var(--warm-white);
+        }
+
+        .slideshow-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .slideshow {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            background: var(--charcoal);
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .slideshow-controls {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+
+        .slide-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .slide-dot:hover,
+        .slide-dot.active {
+            background: white;
+            transform: scale(1.2);
+        }
+
+        /* Eye icon styling */
+        .menu-item-eye {
+            margin-left: 10px;
+            cursor: pointer;
+            color: var(--primary-green);
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .menu-item-eye:hover {
+            color: var(--dark-green);
+            transform: scale(1.1);
+        }
+
+        /* Image preview container */
+        .image-preview-container {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10000;
+            display: none;
+        }
+
+        .image-preview {
+            max-width: 400px;
+            max-height: 300px;
+            border: 10px solid white;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            object-fit: cover;
+        }
+
+        /* Close button for image preview */
+        .image-preview-close {
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            width: 30px;
+            height: 30px;
+            background: var(--primary-green);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 18px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .image-preview-close:hover {
+            background: var(--dark-green);
+            transform: scale(1.1);
+        }
+
+        /* Overlay for when image is displayed */
+        .image-preview-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 9999;
+            display: none;
+        }
+
+
+        /* Main Content */
+        main {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 4rem 0;
+            scroll-margin-top: 100px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--deep-forest);
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.5px;
+        }
+
+        .section-divider {
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-green), var(--accent-gold));
+            margin: 1.5rem auto;
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Menu Grid */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .menu-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-light);
+        }
+
+        .menu-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .menu-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.5rem;
+        }
+
+        .menu-item-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--deep-forest);
+            flex: 1;
+        }
+
+        .menu-item-price {
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: var(--primary-green);
+            white-space: nowrap;
+            margin-left: 1rem;
+        }
+
+        .menu-item-description {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* Special Badges */
+        .special-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-gold), #d4af37);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 0.5rem;
+        }
+
+        /* Hours Box */
+        .hours-box {
+            background: linear-gradient(135deg, var(--deep-forest), #1a4d2e);
+            color: white;
+            padding: 3rem;
+            border-radius: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .hours-box h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .hours-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .hours-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .hours-day {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .hours-time {
+            color: var(--accent-gold);
+            font-weight: 500;
+        }
+
+        /* Table Styles */
+        .table-container {
+            overflow-x: auto;
+            margin: 2rem 0;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            background: white;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        thead {
+            background: linear-gradient(135deg, var(--deep-forest), #1a4d2e);
+            color: white;
+        }
+
+        th, td {
+            padding: 1rem 1.5rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        th {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+        }
+
+        tbody tr {
+            transition: background 0.2s ease;
+        }
+
+        tbody tr:hover {
+            background: rgba(20, 172, 41, 0.05);
+        }
+
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Events Section */
+        .events-list {
+            max-width: 700px;
+            margin: 0 auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .event-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--deep-forest);
+            text-align: center;
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+
+        .event-dates {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .event-date {
+            padding: 1rem;
+            background: var(--warm-white);
+            border-left: 4px solid var(--primary-green);
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .event-date:hover {
+            background: rgba(20, 172, 41, 0.1);
+            transform: translateX(5px);
+        }
+
+        /* Expanded Menu Sections */
+        .expanded-menu {
+            margin-top: 2rem;
+        }
+
+        .menu-category {
+            margin-bottom: 4rem;
+        }
+
+        /* Make menu-category titles match section-header titles */
+        .menu-category h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--deep-forest);
+            text-align: center;
+            position: relative;
+            padding-bottom: 0;
+        }
+
+        .menu-category h3::after {
+            content: '';
+            position: absolute;
+            bottom: -1.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            border-radius: 2px;
+            background: linear-gradient(90deg, var(--primary-green), var(--accent-gold));
+        }
+
+        /* Add margin for the menu items below */
+        .menu-category .menu-grid {
+            margin-top: 3rem;
+        }
+
+        /* Mobile adjustment */
+        @media (max-width: 768px) {
+            .menu-category h3 {
+                font-size: 2rem;
+            }
+            .menu-category h3::after {
+                bottom: -1rem;
+                width: 60px;
+            }
+            .image-preview {
+                max-width: 90vw;
+                max-height: 60vh;
+            }
+            
+            .menu-item-eye {
+                font-size: 0.8rem;
+            }
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--deep-forest);
+            color: white;
+            padding: 3rem 2rem 1.5rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent-gold);
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            line-height: 1.8;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-green);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(20, 172, 41, 0.4);
+            z-index: 999;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--dark-green);
+            transform: translateY(-5px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+            /* Make header items spaced correctly on mobile */
+            .header-content {
+                justify-content: space-between;
+            }
+
+            .main-nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 1rem;
+                padding-left: 0; /* remove large desktop offset */
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            }
+
+            /* Ensure links are readable against white mobile menu background */
+            .main-nav a {
+                color: var(--text-dark);
+                padding: 0.8rem 1rem;
+            }
+
+            .main-nav.active {
+                display: flex;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+                color: #fff; /* visible on dark header */
+                background: transparent;
+                border: none;
+            }
+
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                padding: 1rem;
+            }
+
+            .logo-text {
+                font-size: 1.4rem;
+            }
+
+            .hero {
+                padding: 3rem 1.5rem;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .hero-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 1.5rem;
+            }
+
+            .slideshow {
+                height: 300px;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .hours-box {
+                padding: 2rem 1.5rem;
+            }
+
+            th, td {
+                padding: 0.8rem;
+                font-size: 0.9rem;
+            }
+
+            .events-list {
+                padding: 2rem 1.5rem;
+            }
+
+            .event-dates {
+                grid-template-columns: 1fr;
+            }
+
+            .menu-category h3 {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* Loading Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        /* Smooth Reveal on Scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="header-content">
+            <div class="logo">
+                <img src="Logo.png" alt="Stoney's Grill Logo">
+            </div>
+            <nav>
+                <ul class="main-nav" id="mainNav">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#specials">Specials</a></li>
+                    <li><a href="#bites">Small Plates</a></li>
+                    <li><a href="#appetizers">Appetizers</a></li>
+                    <li><a href="#soups-salads">Soups & Salads</a></li>
+                    <li><a href="#pasta">Pasta</a></li>
+                    <li><a href="#dinner">Dinner</a></li>
+                    <li><a href="#sandwiches">Sandwiches</a></li>
+                    <li><a href="#desserts">Desserts</a></li>
+                    <li><a href="#catering">Catering</a></li>
+                    <li><a href="#events">Events</a></li>
+                    <li><a href="http://menus.fyi/10436024" class="cta-button" target="_blank">Order Online</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero fade-in">
+        <div class="hero-content">
+            <h1>Welcome to Stoney's</h1>
+            <p>A local favorite for over 40 years, serving classic comfort food with modern flair</p>
+            <div class="hero-info">
+                <div class="hero-info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>1859 Van Vranken Ave, Schenectady, NY</span>
+                </div>
+                <div class="hero-info-item">
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:5183829759" style="color: white; text-decoration: none;">518-382-9759</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Welcome Section -->
+    <div class="welcome-section reveal">
+        <p>
+            Stoney's has been a favorite local hangout for over 40 years, offering a warm and inviting vibe 
+            from the second you walk in, mixing classic comfort, friendly energy, a modern touch, and great 
+            food, making it a spot where everyone feels at home.
+        </p>
+    </div>
+
+    <!-- Slideshow Section -->
+    <div class="slideshow-section">
+        <div class="slideshow-container">
+            <div class="slideshow" id="slideshow">
+                <div class="slide active"><img src="imgss/slide1.jpeg" alt="Stoney's Grill Interior" loading="lazy"></div>
+                <div class="slide"><img src="imgss/slide2.jpeg" alt="Delicious Food" loading="lazy"></div>
+                <div class="slide"><img src="imgss/slide3.jpeg" alt="Menu Special" loading="lazy"></div>
+                <div class="slide"><img src="imgss/slide4.jpeg" alt="Dining Experience" loading="lazy"></div>
+                <div class="slide"><img src="imgss/slide5.jpeg" alt="Fresh Dishes" loading="lazy"></div>
+                <div class="slide"><img src="imgss/slide6.jpeg" alt="Bar Area" loading="lazy"></div>
+            </div>
+            <div class="slideshow-controls" id="slideshowControls"></div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hours Section -->
+        <section id="hours">
+            <div class="hours-box reveal">
+                <h3>Hours of Operation</h3>
+                <div class="hours-list">
+                    <div class="hours-item">
+                        <span class="hours-day">Sunday</span>
+                        <span class="hours-time">4 PM - 9 PM</span>
+                    </div>
+                    <div class="hours-item">
+                        <span class="hours-day">Monday</span>
+                        <span class="hours-time">4 PM - 9 PM</span>
+                    </div>
+                    <div class="hours-item">
+                        <span class="hours-day">Tuesday</span>
+                        <span class="hours-time">Closed</span>
+                    </div>
+                    <div class="hours-item">
+                        <span class="hours-day">Wednesday - Saturday</span>
+                        <span class="hours-time">2 PM - 9 PM</span>
+                    </div>
+                </div>
+                <p style="text-align: center; margin-top: 1.5rem; opacity: 0.8; font-style: italic;">*Bar open after 9 PM</p>
+            </div>
+        </section>
+
+        <!-- Weekly Specials -->
+        <section id="specials">
+            <div class="section-header reveal">
+                <h2>Weekly Specials</h2>
+                <div class="section-divider"></div>
+                <p class="section-subtitle">Carefully crafted dishes that change with the seasons</p>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item reveal">
+                    <div class="menu-item-header">
+                        <h3 class="menu-item-name">Crab Cakes</h3>
+                        <span class="menu-item-price">$19</span>
+                    </div>
+                    <p class="menu-item-description">With Newburg sauce</p>
+                </div>
+                <div class="menu-item reveal">
+                    <div class="menu-item-header">
+                        <h3 class="menu-item-name">Pan Seared Scallops</h3>
+                        <span class="menu-item-price">$22</span>
+                    </div>
+                    <p class="menu-item-description">With beurre blanc sauce</p>
+                </div>
+                <div class="menu-item reveal">
+                    <div class="menu-item-header">
+                        <h3 class="menu-item-name">Chicken Salad Slider</h3>
+                        <span class="menu-item-price">$13</span>
+                    </div>
+                </div>
+                <div class="menu-item reveal">
+                    <div class="menu-item-header">
+                        <h3 class="menu-item-name">Fettuccine Alfredo</h3>
+                        <span class="menu-item-price">$16</span>
+                    </div>
+                    <p class="menu-item-description">With peas &amp; ham</p>
+                </div>
+                <div class="menu-item reveal">
+                    <div class="menu-item-header">
+                        <h3 class="menu-item-name">Pork Osso Bucco</h3>
+                        <span class="menu-item-price">$29</span>
+                    </div>
+                    <p class="menu-item-description">With stuffing &amp; gravy</p>
+                </div>
+                <div class="menu-item reveal">
+                    <div class="menu-item-header">
+                        <h3 class="menu-item-name">Broiled 3-Fish</h3>
+                        <span class="menu-item-price">$30</span>
+                    </div>
+                    <p class="menu-item-description">Salmon, haddock &amp; scallops</p>
+                </div>
+                <div class="menu-item reveal">
+                    <div class="menu-item-header">
+                        <h3 class="menu-item-name">Seafood Scampi Over Linguini</h3>
+                        <span class="menu-item-price">$32</span>
+                    </div>
+                    <p class="menu-item-description">Shrimp, scallops &amp; crab flakes</p>
+                </div>
+                <div class="menu-item reveal">
+                    <div class="menu-item-header">
+                        <h3 class="menu-item-name">Surf &amp; Turf Choice</h3>
+                        <span class="menu-item-price">$36</span>
+                    </div>
+                    <p class="menu-item-description">8 oz NY strip with shrimp scampi, stuffed shrimp, or broiled scallops</p>
+                </div>
+                <div class="menu-item reveal">
+                    <div class="menu-item-header">
+                        <h3 class="menu-item-name">Wings</h3>
+                        <span class="menu-item-price">$14</span>
+                    </div>
+                    <p class="menu-item-description">Monday, Wednesday & Thursday only</p>
+                    <span class="special-badge">Limited Days</span>
+                </div>
+                <div class="menu-item reveal">
+                    <div class="menu-item-header">
+                        <h3 class="menu-item-name">Burger</h3>
+                        <span class="menu-item-price">$15</span>
+                    </div>
+                    <p class="menu-item-description">Monday, Wednesday & Thursday only</p>
+                    <span class="special-badge">Limited Days</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Expanded Full Menu -->
+        <div class="expanded-menu">
+            <!-- Small Plates -->
+            <section id="bites">
+                <div class="menu-category">
+                    <h3 class="reveal">Stoney's Small Plates</h3>
+                    <div class="menu-grid">
+                        <div class="menu-item reveal">
+                            <div class="menu-item-header">
+                                <h2 class="menu-item-name">Chicken Quesadillas</h2>
+                                <span class="menu-item-price">$8.95</span>
+                            </div>
+                            <p class="menu-item-description">Chicken & Cheese</p>
+                        </div>
+                        <div class="menu-item reveal">
+                            <div class="menu-item-header">
+                                <h2 class="menu-item-name">Stuffed Mushrooms</h2>
+                                <span class="menu-item-price">$15</span>
+                            </div>
+                            <p class="menu-item-description">With Seafood Stuffing</p>
+                        </div>
+                        <div class="menu-item reveal">
+                            <div class="menu-item-header">
+                                <h2 class="menu-item-name">Buffalo Wings</h2>
+                                <span class="menu-item-price">$7.95</span>
+                            </div>
+                            <p class="menu-item-description">6 pieces</p>
+                        </div>
+                        <div class="menu-item reveal">
+                            <div class="menu-item-header">
+                                <h2 class="menu-item-name">Boneless Wings</h2>
+                                <span class="menu-item-price">$7.95</span>
+                            </div>
+                            <p class="menu-item-description">4 pieces</p>
+                        </div>
+                        <div class="menu-item reveal">
+                            <div class="menu-item-header">
+                                <h2 class="menu-item-name">Onion Rings</h2>
+                                <span class="menu-item-price">$7.95</span>
+                            </div>
+                        </div>
+                        <div class="menu-item reveal">
+                            <div class="menu-item-header">
+                                <h2 class="menu-item-name">Mozzarella Stix</h2>
+                                <span class="menu-item-price">$6.95</span>
+                            </div>
+                        </div>
+                        <div class="menu-item reveal">
+                            <div class="menu-item-header">
+                                <h2 class="menu-item-name">Chicken Salad</h2>
+                                <span class="menu-item-price">$8.95</span>
+                            </div>
+                        </div>
+                        <div class="menu-item reveal">
+                            <div class="menu-item-header">
+                                <h2 class="menu-item-name">Cobb Salad</h2>
+                                <span class="menu-item-price">$8.95</span>
+                            </div>
+                        </div>
+                        <div class="menu-item reveal">
+                            <div class="menu-item-header">
+                                <h2 class="menu-item-name">Caesar Salad</h2>
+                                <span class="menu-item-price">$6.95</span>
+                            </div>
+                            <p class="menu-item-description">Add chicken or shrimp $2.99</p>
+                        </div>
+                        <div class="menu-item reveal">
+                            <div class="menu-item-header">
+                                <h2 class="menu-item-name">Mac &amp; Cheese</h2>
+                                <span class="menu-item-price">$6.95</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Appetizers -->
+            <section id="appetizers">
+                <div class="menu-category">
+                    <h3 class="reveal">Appetizers & Small Bites</h3>
+                    <div class="menu-grid">
+                        <div class="menu-item reveal">
+                            <div class="menu-item-header">
+                                <h2 class="menu-item-name">Chicken Livers in Marsala Wine Sauce</h2>
+                                <span class="menu-item-price">$15</span>
+                            </div>
+                        </div>
+                        <div class="menu-item reveal">
+                            <div class="menu-item-header">
+                                <h2 class="menu-item-name">Stuffed Mushrooms with Seafood</h2>
+                                <span class="menu-item-price">$15</span>
+                            </div>
+                            <p class="menu-item-description">With Blue Cheese, Celery & Carrots</p>
+                        </div>
+                        <div class="menu-item reveal">
+                            <div class="menu-item-header">
+                                <h2 class="menu-item-name">Shrimp Cocktail</h2>
+                                <span class="menu-item-price">$15</span>
+                            </div>
+                            <p class="menu-item-description">Jumbo shrimp chilled and served with cocktail sauce</p>
+                        </div>
+                        <div class="menu-item reveal">
+                            <div class="menu-item-header">
+                                <h2 class="menu-item-name">Fried Calamari</h2>
+                                <span class="menu-item-price">$17</span>
+                            </div>
+                            <p class="menu-item-description">Served with Sautéed Spinach in Garlic</p>
+                        </div>
+                        <div class="menu-item reveal">
+                            <div class="menu-item-header">
+                                <h2 class="menu-item-name">Steamed Clams</h2>
+                                <span class="menu-item-price">$15</span>
+                            </div>
+                            <p class="menu-item-description">Baker's Dozen steamed clams with clarified butter</p>
+                        </div>
+                        <div class="menu-item reveal">
+                            <div class="menu-item-header">
+                                <h2 class="menu-item-name">Mussels Marinara</h2>
+                                <span class="menu-item-price">$16</span>
+                            </div>
+                        </div>
+                        <div class="menu-item reveal" data-image="imgss/Egg Plant Rolatinin Choice 1.jpg">
+                            <div class="menu-item-header">
+                                <h2 class="menu-item-name">Eggplant Rollatini</h2>
+                                <span class="menu-item-price">$17</span>
+                            </div>
+                            <p class="menu-item-description">Stuffed eggplant with Ricotta, Mozzarella & Romano Cheese</p>
+                        </div>
+                        <div class="menu-item reveal">
+                            <div class="menu-item-header">
+                                <h2 class="menu-item-name">Chicken Tenders</h2>
+                                <span class="menu-item-price">$14</span>
+                            </div>
+                            <p class="menu-item-description">With Blue Cheese, Celery & Carrots</p>
+                        </div>
+                        <div class="menu-item reveal">
+                            <div class="menu-item-header">
+                                <h2 class="menu-item-name">Buffalo Wings (Jumbo)</h2>
+                                <span class="menu-item-price">$17</span>
+                            </div>
+                            <p class="menu-item-description">With Blue Cheese, Celery & Carrots</p>
+                        </div>
+                        <div class="menu-item reveal" data-image="imgss/BonelessWings.jpg">
+                            <div class="menu-item-header">
+                                <h2 class="menu-item-name">Boneless Wings</h2>
+                                <span class="menu-item-price">$15</span>
+                            </div>
+                            <p class="menu-item-description">With Blue Cheese, Celery & Carrots</p>
+                        </div>
+                        <div class="menu-item reveal">
+                            <div class="menu-item-header">
+                                <h2 class="menu-item-name">Onion Rings</h2>
+                                <span class="menu-item-price">$8</span>
+                            </div>
+                        </div>
+                        <div class="menu-item reveal">
+                            <div class="menu-item-header">
+                                <h2 class="menu-item-name">Mozzarella Stix</h2>
+                                <span class="menu-item-price">$10</span>
+                            </div>
+                        </div>
+                        <div class="menu-item reveal">
+                            <div class="menu-item-header">
+                                <h2 class="menu-item-name">Mac & Cheese</h2>
+                                <span class="menu-item-price">$14</span>
+                            </div>
+                        </div>
+                        <div class="menu-item reveal">
+                            <div class="menu-item-header">
+                                <h2 class="menu-item-name">French Fries</h2>
+                                <span class="menu-item-price">$5</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Soups & Salads -->
+            <section id="soups-salads">
+                <div class="menu-category">
+                    <h3 class="reveal">Soups & Salads</h3>
+                    <div class="menu-grid">
+                        <div class="menu-item reveal">
+                            <div class="menu-item-header">
+                                <h2 class="menu-item-name">Grilled Chicken Salad</h2>
+                                <span class="menu-item-price">$16</span>
+                            </div>
+                        </div>
+                        <div class="menu-item reveal">
+                            <div class="menu-item-header">
+                                <h2 class="menu-item-name">COBB Salad</h2>
+                                <span class="menu-item-price">$16</span>
+                            </div>
+                        </div>
+                        <div class="menu-item reveal" data-image="imgss/Caeser Salad with Chicken.jpg">
+                            <div class="menu-item-header">
+                                <h2 class="menu-item-name">Caesar Salad</h2>
+                                <span class="menu-item-price">$14</span>
+                            </div>
+                            <p class="menu-item-description">Add Chicken @ $4.75, Add 4 Shrimps @ $7.50</p>
+                        </div>
+                        <div class="menu-item reveal">
+                            <div class="menu-item-header">
+                                <h2 class="menu-item-name">French Onion Soup</h2>
+                                <span class="menu-item-price">$10</span>
+                            </div>
+                        </div>
+                        <div class="menu-item reveal">
+                            <div class="menu-item-header">
+                                <h2 class="menu-item-name">Soup Of the Day - Cup</h2>
+                                <span class="menu-item-price">$5</span>
+                            </div>
+                            <p class="menu-item-description">Gourmet soup</p>
+                        </div>
+                        <div class="menu-item reveal">
+                            <div class="menu-item-header">
+                                <h2 class="menu-item-name">Soup Of the Day - Bowl</h2>
+                                <span class="menu-item-price">$7</span>
+                            </div>
+                            <p class="menu-item-description">Gourmet soup</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pasta -->
+            <section id="pasta">
+                <div class="menu-category">
+                    <h3 class="reveal">Pasta</h3>
+                    <div class="menu-grid">
+                        <div class="menu-item reveal">
+                            <div class="menu-item-header">
+                                <h2 class="menu-item-name">Vodka Rigatoni</h2>
+                                <span class="menu-item-price">$19</span>
+                            </div>
+                            <p class="menu-item-description">Made with Spicy Vodka, tomato, cream sauce</p>
+                        </div>
+                        <div class="menu-item reveal">
+                            <div class="menu-item-header">
+                                <h2 class="menu-item-name">Rigatoni Bolognese</h2>
+                                <span class="menu-item-price">$21</span>
+                            </div>
+                            <p class="menu-item-description">Loose sausage, tomato, cream sauce, tossed with Rigatoni</p>
+                        </div>
+                        <div class="menu-item reveal">
+                            <div class="menu-item-header">
+                                <h2 class="menu-item-name">Rigatoni Sautée</h2>
+                                <span class="menu-item-price">$20</span>
+                            </div>
+                            <p class="menu-item-description">With Broccoli, Chicken, Garlic, Roasted Red Peppers & Romano Cheese</p>
+                        </div>
+                        <div class="menu-item reveal">
+                            <div class="menu-item-header">
+                                <h2 class="menu-item-name">Linguini with White or Red Clam Sauce</h2>
+                                <span class="menu-item-price">$26</span>
+                            </div>
+                            <p class="menu-item-description">Dozen Steamed Clams with garlic butter sauce</p>
+                        </div>
+                        <div class="menu-item reveal">
+                            <div class="menu-item-header">
+                                <h2 class="menu-item-name">Shrimp Scampi Over Linguini</h2>
+                                <span class="menu-item-price">$26</span>
+                            </div>
+                            <p class="menu-item-description">Sautéed shrimp with garlic, butter, lemon, white wine</p>
+                        </div>
+                        <div class="menu-item reveal">
+                            <div class="menu-item-header">
+                                <h2 class="menu-item-name">Seafood Alfredo</h2>
+                                <span class="menu-item-price">$30</span>
+                            </div>
+                            <p class="menu-item-description">With Scallops, Shrimp & Crab flakes</p>
+                        </div>
+                        <div class="menu-item reveal">
+                            <div class="menu-item-header">
+                                <h2 class="menu-item-name">Fettuccini Florentine</h2>
+                                <span class="menu-item-price">$20</span>
+                            </div>
+                            <p class="menu-item-description">Sautéed Mushrooms, Onions, Spinach, Garlic with Sherry Cream Sauce</p>
+                        </div>
+                        <div class="menu-item reveal">
+                            <div class="menu-item-header">
+                                <h2 class="menu-item-name">Pasta With Meatballs</h2>
+                                <span class="menu-item-price">$17</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Dinner -->
+            <section id="dinner">
+                <div class="menu-category">
+                    <h3 class="reveal">Dinner</h3>
+                    <div class="menu-grid">
+                        <div class="menu-item reveal">
+                            <div class="menu-item-header">
+                                <h2 class="menu-item-name">Char Broiled Strip Steak - 14 Oz</h2>
+                                <span class="menu-item-price">$35</span>
+                            </div>
+                        </div>
+                        <div class="menu-item reveal">
+                            <div class="menu-item-header">
+                                <h2 class="menu-item-name">Shepherd's Pie</h2>
+                                <span class="menu-item-price">$21</span>
+                            </div>
+                            <p class="menu-item-description">Ground beef, garden vegetables, seasoned in brown sauce topped with mashed potatoes</p>
+                        </div>
+                        <div class="menu-item reveal">
+                            <div class="menu-item-header">
+                                <h2 class="menu-item-name">Chicken Marsala</h2>
+                                <span class="menu-item-price">$24</span>
+                            </div>
+                            <p class="menu-item-description">Pan-fried chicken breasts in a sweet Marsala wine and mushroom sauce, With Side Of Pasta or Vegetables & Potatoes</p>
+                        </div>
+                        <div class="menu-item reveal" data-image="imgss/Chicken Francese.jpg">
+                            <div class="menu-item-header">
+                                <h2 class="menu-item-name">Chicken Francese</h2>
+                                <span class="menu-item-price">$24</span>
+                            </div>
+                            <p class="menu-item-description">Sautéed egg battered medallions, finished with lemon white wine butter</p>
+                        </div>
+                        <div class="menu-item reveal">
+                            <div class="menu-item-header">
+                                <h2 class="menu-item-name">Chicken Piccata</h2>
+                                <span class="menu-item-price">$24</span>
+                            </div>
+                            <p class="menu-item-description">Egg battered with capers, mushrooms & a white wine butter sauce</p>
+                        </div>
+                        <div class="menu-item reveal">
+                            <div class="menu-item-header">
+                                <h2 class="menu-item-name">Chicken Michael</h2>
+                                <span class="menu-item-price">$24</span>
+                            </div>
+                            <p class="menu-item-description">Lightly breaded topped with roasted peppers, melted mozzarella & garlic butter sauce</p>
+                        </div>
+                        <div class="menu-item reveal">
+                            <div class="menu-item-header">
+                                <h2 class="menu-item-name">Chicken Parm With Side of Pasta</h2>
+                                <span class="menu-item-price">$21</span>
+                            </div>
+                            <p class="menu-item-description">Breaded veal topped with sauce and Mozzarella, With Side Of Pasta or Vegetables & Potatoes</p>
+                        </div>
+                        <div class="menu-item reveal">
+                            <div class="menu-item-header">
+                                <h2 class="menu-item-name">Mussels Marinara over Linguini</h2>
+                                <span class="menu-item-price">$17.95</span>
+                            </div>
+                        </div>
+                        <div class="menu-item reveal">
+                            <div class="menu-item-header">
+                                <h2 class="menu-item-name">Broiled Haddock</h2>
+                                <span class="menu-item-price">$25</span>
+                            </div>
+                        </div>
+                        <div class="menu-item reveal">
+                            <div class="menu-item-header">
+                                <h2 class="menu-item-name">Haddock Marinara</h2>
+                                <span class="menu-item-price">$25</span>
+                            </div>
+                        </div>
+                        <div class="menu-item reveal">
+                            <div class="menu-item-header">
+                                <h2 class="menu-item-name">Haddock Francese</h2>
+                                <span class="menu-item-price">$25</span>
+                            </div>
+                            <p class="menu-item-description">Sautéed egg battered haddock fillet, finished with lemon white wine butter</p>
+                        </div>
+                        <div class="menu-item reveal">
+                            <div class="menu-item-header">
+                                <h2 class="menu-item-name">Broiled or Fried Scallops</h2>
+                                <span class="menu-item-price">$32</span>
+                            </div>
+                        </div>
+                        <div class="menu-item reveal" data-image="imgss/Fried Seafood platter.jpg">
+                            <div class="menu-item-header">
+                                <h2 class="menu-item-name">Fried Seafood Platter</h2>
+                                <span class="menu-item-price">$26</span>
+                            </div>
+                            <p class="menu-item-description">Combination fried haddock, clams, shrimp with cole slaw and french fries</p>
+                        </div>
+                        <div class="menu-item reveal">
+                            <div class="menu-item-header">
+                                <h2 class="menu-item-name">Seafood Fra Diablo</h2>
+                                <span class="menu-item-price">$34</span>
+                            </div>
+                            <p class="menu-item-description">Simmered Clams, Mussels, Shrimp, Scallops with Spicy marinara over Linguini</p>
+                        </div>
+                        <div class="menu-item reveal">
+                            <div class="menu-item-header">
+                                <h2 class="menu-item-name">Seafood Mac & Cheese</h2>
+                                <span class="menu-item-price">$24</span>
+                            </div>
+                        </div>
+                        <div class="menu-item reveal">
+                            <div class="menu-item-header">
+                                <h2 class="menu-item-name">Fish and Chips with cole slaw</h2>
+                                <span class="menu-item-price">$21</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sandwiches & Wraps -->
+            <section id="sandwiches">
+                <div class="menu-category">
+                    <h3 class="reveal">Sandwiches & Wraps</h3>
+                    <div class="menu-grid">
+                        <div class="menu-item reveal">
+                            <div class="menu-item-header">
+                                <h2 class="menu-item-name">Chicken Quesadillas</h2>
+                                <span class="menu-item-price">$16</span>
+                            </div>
+                        </div>
+                        <div class="menu-item reveal" data-image="imgss/Cheese Burger with Fries.jpg">
+                            <div class="menu-item-header">
+                                <h2 class="menu-item-name">Burger</h2>
+                                <span class="menu-item-price">$16</span>
+                            </div>
+                        </div>
+                        <div class="menu-item reveal">
+                            <div class="menu-item-header">
+                                <h2 class="menu-item-name">Grilled Reuben</h2>
+                                <span class="menu-item-price">$17</span>
+                            </div>
+                            <p class="menu-item-description">Grilled Rye with Swiss cheese, Russian dressing with sauerkraut and corned beef, Served With Fries or Deli Salad</p>
+                        </div>
+                        <div class="menu-item reveal" data-image="imgss/Turkey Rueben.jpg">
+                            <div class="menu-item-header">
+                                <h2 class="menu-item-name">Grilled Turkey Reuben</h2>
+                                <span class="menu-item-price">$17</span>
+                            </div>
+                            <p class="menu-item-description">Grilled Rye with Swiss cheese, Russian dressing with sauerkraut and Turkey</p>
+                        </div>
+                        <div class="menu-item reveal">
+                            <div class="menu-item-header">
+                                <h2 class="menu-item-name">Steak Subs - Build your own</h2>
+                                <span class="menu-item-price">$17</span>
+                            </div>
+                            <p class="menu-item-description">Shredded steak, Mushrooms, Onions, Peppers, Mozzarella cheese and Sauce</p>
+                        </div>
+                        <div class="menu-item reveal">
+                            <div class="menu-item-header">
+                                <h2 class="menu-item-name">Chicken Parm Sub</h2>
+                                <span class="menu-item-price">$17</span>
+                            </div>
+                        </div>
+                        <div class="menu-item reveal">
+                            <div class="menu-item-header">
+                                <h2 class="menu-item-name">Meatball Parm Sub</h2>
+                                <span class="menu-item-price">$17</span>
+                            </div>
+                        </div>
+                        <div class="menu-item reveal" data-image="imgss/Jersey Joe.jpg">
+                            <div class="menu-item-header">
+                                <h2 class="menu-item-name">Jersey Joe</h2>
+                                <span class="menu-item-price">$17</span>
+                            </div>
+                            <p class="menu-item-description">Thinly sliced roast beef</p>
+                        </div>
+                        <div class="menu-item reveal">
+                            <div class="menu-item-header">
+                                <h2 class="menu-item-name">Open Faced Hot Roast Beef</h2>
+                                <span class="menu-item-price">$20</span>
+                            </div>
+                            <p class="menu-item-description">Thinly sliced beef over white bread, and natural beef gravy with mashed potatoes or French Fries</p>
+                        </div>
+                        <div class="menu-item reveal">
+                            <div class="menu-item-header">
+                                <h2 class="menu-item-name">Open Faced Hot Turkey</h2>
+                                <span class="menu-item-price">$19</span>
+                            </div>
+                            <p class="menu-item-description">Thinly sliced oven-roasted turkey over white bread, and natural turkey gravy with mashed potatoes or French Fries</p>
+                        </div>
+                        <div class="menu-item reveal">
+                            <div class="menu-item-header">
+                                <h2 class="menu-item-name">4 R's Wrap</h2>
+                                <span class="menu-item-price">$17</span>
+                            </div>
+                            <p class="menu-item-description">Roast Beef, Red Peppers, Red Onions, Russian</p>
+                        </div>
+                        <div class="menu-item reveal">
+                            <div class="menu-item-header">
+                                <h2 class="menu-item-name">Turkey Bacon Wrap</h2>
+                                <span class="menu-item-price">$17</span>
+                            </div>
+                        </div>
+                        <div class="menu-item reveal">
+                            <div class="menu-item-header">
+                                <h2 class="menu-item-name">Buffalo Chicken Tender Wrap</h2>
+                                <span class="menu-item-price">$17</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Desserts -->
+            <section id="desserts">
+                <div class="menu-category">
+                    <h3 class="reveal">Desserts</h3>
+                    <div class="menu-grid">
+                        <div class="menu-item reveal">
+                            <div class="menu-item-header">
+                                <h2 class="menu-item-name">Blue Berry Mascarpone Cheesecake</h2>
+                                <span class="menu-item-price">$7.95</span>
+                            </div>
+                        </div>
+                        <div class="menu-item reveal" data-image="imgss/Chocolate Cake.jpg">
+                            <div class="menu-item-header">
+                                <h2 class="menu-item-name">Chocolate Cake</h2>
+                                <span class="menu-item-price">$7.95</span>
+                            </div>
+                        </div>
+                        <div class="menu-item reveal">
+                            <div class="menu-item-header">
+                                <h2 class="menu-item-name">Carrot Cake</h2>
+                                <span class="menu-item-price">$7.95</span>
+                            </div>
+                        </div>
+                        <div class="menu-item reveal">
+                            <div class="menu-item-header">
+                                <h2 class="menu-item-name">Peanut Butter Pie</h2>
+                                <span class="menu-item-price">$7.95</span>
+                            </div>
+                        </div>
+                        <div class="menu-item reveal">
+                            <div class="menu-item-header">
+                                <h2 class="menu-item-name">Gulab Jamun with Ice Cream</h2>
+                                <span class="menu-item-price">$7.95</span>
+                            </div>
+                        </div>
+                        <div class="menu-item reveal">
+                            <div class="menu-item-header">
+                                <h2 class="menu-item-name">Pumpkin Spiced or Irish Cream Coffee</h2>
+                                <span class="menu-item-price">$7.95</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Catering Menu -->
+        <section id="catering">
+            <div class="section-header reveal">
+                <h2>Catering Menu</h2>
+                <div class="section-divider"></div>
+                <p class="section-subtitle">Perfect for your next event - American & Indian cuisine</p>
+            </div>
+
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--deep-forest); margin: 3rem 0 2rem; text-align: center;" class="reveal">American Catering</h3>
+            <div class="table-container reveal">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Item Name</th>
+                            <th>Description</th>
+                            <th>Half Tray</th>
+                            <th>Full Tray</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Rigatoni Bolognese</td>
+                            <td>Rigatoni with house sauce, loose sausage and cream</td>
+                            <td>$85</td>
+                            <td>$145</td>
+                        </tr>
+                        <tr>
+                            <td>Meat balls</td>
+                            <td>Homemade meatballs with sauce (30/60 pieces)</td>
+                            <td>$125</td>
+                            <td>$175</td>
+                        </tr>
+                        <tr>
+                            <td>Sausage & Peppers</td>
+                            <td>100+ pieces with peppers and onions</td>
+                            <td>$170</td>
+                            <td>$240</td>
+                        </tr>
+                        <tr>
+                            <td>Lasagna</td>
+                            <td>Made with loose sausage sauce</td>
+                            <td>$170</td>
+                            <td>$240</td>
+                        </tr>
+                        <tr>
+                            <td>Chicken Francese</td>
+                            <td>Egg battered with lemon white wine butter (25/50 pieces)</td>
+                            <td>$135</td>
+                            <td>$180</td>
+                        </tr>
+                        <tr>
+                            <td>Chicken Parm</td>
+                            <td>Breaded with mozzarella and tomato sauce (15/30 pieces)</td>
+                            <td>$135</td>
+                            <td>$180</td>
+                        </tr>
+                        <tr>
+                            <td>Chicken Marsala</td>
+                            <td>With mushrooms and marsala wine (30/60 pieces)</td>
+                            <td>$135</td>
+                            <td>$180</td>
+                        </tr>
+                        <tr>
+                            <td>Roasted Chicken</td>
+                            <td>Herb roasted cut chicken (30/60 pieces)</td>
+                            <td>$80</td>
+                            <td>$120</td>
+                        </tr>
+                        <tr>
+                            <td>Eggplant Parm</td>
+                            <td>Layered with sauce and mozzarella</td>
+                            <td>$90</td>
+                            <td>$150</td>
+                        </tr>
+                        <tr>
+                            <td>Baked Ziti/Rigatoni</td>
+                            <td>With house sauce, mozzarella and romano</td>
+                            <td>$50</td>
+                            <td>$95</td>
+                        </tr>
+                        <tr>
+                            <td>Vodka Rigatoni</td>
+                            <td>Vodka tomato cream sauce with romano</td>
+                            <td>$65</td>
+                            <td>$120</td>
+                        </tr>
+                        <tr>
+                            <td>Rigatoni or Penne with Sauce</td>
+                            <td>Choice of Pasta Tossed with house Sauce</td>
+                            <td>$35</td>
+                            <td>$55</td>
+                        </tr>
+                        <tr>
+                            <td>Tortellini Alfredo</td>
+                            <td>Cheese tortellini in alfredo sauce</td>
+                            <td>$95</td>
+                            <td>$165</td>
+                        </tr>
+                        <tr>
+                            <td>Tossed Salad</td>
+                            <td>With choice of dressing</td>
+                            <td>$50</td>
+                            <td>$80</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--deep-forest); margin: 3rem 0 2rem; text-align: center;" class="reveal">Indian Catering</h3>
+            <div class="table-container reveal">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Item Name</th>
+                            <th>Size / Qty</th>
+                            <th>Half Tray</th>
+                            <th>Full Tray</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Coconut Milk Flavored Rice</td><td>Full Sheet</td><td>$90</td><td>$120</td><td></td></tr>
+                        <tr><td>Dindigul Chicken Biryani</td><td>Full Sheet</td><td>$120</td><td>$160</td><td></td></tr>
+                        <tr><td>Dindigul Mutton Biryani</td><td>Full Sheet</td><td>$175</td><td>$220</td><td></td></tr>
+                        <tr><td>Chicken Vadi Biryani</td><td>Full Sheet</td><td>$140</td><td>$175</td><td></td></tr>
+                        <tr><td>Mutton Vadi Biryani</td><td>Full Sheet</td><td>$180</td><td>$225</td><td></td></tr>
+                        <tr><td>Vegetable Biryani</td><td>Full Sheet</td><td>$120</td><td>$150</td><td></td></tr>
+                        <tr><td>Sambar Rice</td><td>Full Sheet</td><td>$100</td><td>$130</td><td></td></tr>
+                        <tr><td>Chicken Curry</td><td>Full Sheet</td><td>$120</td><td>$160</td><td></td></tr>
+                        <tr><td>Mutton Curry</td><td>Full Sheet</td><td>$175</td><td>$220</td><td></td></tr>
+                        <tr><td>Vegetable Kurma</td><td>Full Sheet</td><td>$100</td><td>$125</td><td></td></tr>
+                        <tr><td>Idli With Sambar & 2 Chutney</td><td>50</td><td>$100</td><td></td><td>Minimum 50</td></tr>
+                        <tr><td>Kesari</td><td>Full Sheet</td><td>$120</td><td>$150</td><td></td></tr>
+                        <tr><td>Pongal (Rice)</td><td>Full Sheet</td><td>$96</td><td>$120</td><td></td></tr>
+                        <tr><td>Ravai Upma/Kitchadi (with Veggies)</td><td>Full Sheet</td><td>$80</td><td>$100</td><td></td></tr>
+                        <tr><td>Semia Upma with Veggies</td><td>Full Sheet</td><td>$100</td><td>$125</td><td></td></tr>
+                        <tr><td>Medu Vadai (With Sambar & Chutney)</td><td>50</td><td>$125</td><td></td><td>Minimum 50</td></tr>
+                        <tr><td>Masal Vadai</td><td>50</td><td>$100</td><td></td><td>Minimum 50</td></tr>
+                        <tr><td>Chicken Pakoda</td><td>Full Sheet</td><td>$120</td><td>$150</td><td></td></tr>
+                        <tr><td>Mutton Thokku</td><td>Full Sheet</td><td>$280</td><td>$350</td><td>Semi Gravy</td></tr>
+                        <tr><td>Chicken Thokku</td><td>Full Sheet</td><td>$144</td><td>$180</td><td>Semi Gravy</td></tr>
+                        <tr><td>Fish Curry</td><td>Full Sheet</td><td>$128</td><td>$160</td><td>Tilapia Boneless</td></tr>
+                        <tr><td>Gulab Jamun</td><td>50</td><td>$50</td><td></td><td>Minimum 50</td></tr>
+                        <tr><td>Paneer Butter Masala</td><td>Full Sheet</td><td>$120</td><td>$150</td><td></td></tr>
+                        <tr><td>Navratan Kurma</td><td>Full Sheet</td><td>$120</td><td>$150</td><td></td></tr>
+                        <tr><td>Vegetable Noodles</td><td>Full Sheet</td><td>$80</td><td>$100</td><td></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Events -->
+        <section id="events">
+            <div class="section-header reveal">
+                <h2>Upcoming Events</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="events-list reveal">
+                <h3 class="event-title">Kaitlyn Fay & Friends (2026)</h3>
+                <div class="event-dates">
+                    <div class="event-date">Sunday, February 15th</div>
+                    <div class="event-date">Sunday, March 15th</div>
+                    <div class="event-date">Sunday, May 17th</div>
+                    <div class="event-date">Sunday, July 19th</div>
+                    <div class="event-date">Sunday, August 16th</div>
+                    <div class="event-date">Sunday, September 20th</div>
+                    <div class="event-date">Sunday, October 18th</div>
+                    <div class="event-date">Sunday, November 15th</div>
+                    <div class="event-date">Sunday, December 20th</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Stoney's</h3>
+                <p>A warm, inviting local hangout for over 40 years, mixing classic comfort with friendly energy and great food.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Location</h3>
+                <p>1859 Van Vranken Ave<br>Schenectady, NY 12308</p>
+                <a href="https://maps.app.goo.gl/i4ff1CA4tXqyshZP7" target="_blank">Get Directions</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <a href="tel:5183829759">518-382-9759</a>
+                <a href="http://menus.fyi/10436024" target="_blank">Order Online</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Stoney's Grill. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const mainNav = document.getElementById('mainNav');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+            const icon = mobileMenuToggle.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        // Slideshow
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const slideshowControls = document.getElementById('slideshowControls');
+
+        // Create dots
+        slides.forEach((_, index) => {
+            const dot = document.createElement('div');
+            dot.className = 'slide-dot';
+            if (index === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => goToSlide(index));
+            slideshowControls.appendChild(dot);
+        });
+
+        const dots = document.querySelectorAll('.slide-dot');
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                dots[i].classList.remove('active');
+            });
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            showSlide(currentSlide);
+        }
+
+        setInterval(nextSlide, 5000);
+
+        // Active Navigation
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.main-nav a:not(.cta-button)');
+
+        window.addEventListener('scroll', () => {
+            let currentSection = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 150;
+                const sectionHeight = section.offsetHeight;
+                
+                if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(currentSection)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Back to Top Button
+        const backToTop = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Scroll Reveal Animation
+        const revealElements = document.querySelectorAll('.reveal');
+
+        const revealOnScroll = () => {
+            revealElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.classList.add('active');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll(); // Initial check
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.site-header')) {
+                mainNav.classList.remove('active');
+                const icon = mobileMenuToggle.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Image Preview Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Create image preview elements
+            const overlay = document.createElement('div');
+            overlay.className = 'image-preview-overlay';
+            
+            const previewContainer = document.createElement('div');
+            previewContainer.className = 'image-preview-container';
+            
+            const previewImage = document.createElement('img');
+            previewImage.className = 'image-preview';
+            
+            const closeButton = document.createElement('button');
+            closeButton.className = 'image-preview-close';
+            closeButton.innerHTML = '×';
+            closeButton.setAttribute('aria-label', 'Close image preview');
+            
+            previewContainer.appendChild(previewImage);
+            previewContainer.appendChild(closeButton);
+            document.body.appendChild(overlay);
+            document.body.appendChild(previewContainer);
+            
+            // Add eye icons to menu items with data-image attribute
+            document.querySelectorAll('.menu-item[data-image]').forEach(item => {
+                const eyeIcon = document.createElement('span');
+                eyeIcon.className = 'menu-item-eye';
+                eyeIcon.innerHTML = '<i class="fas fa-eye"></i>';
+                eyeIcon.setAttribute('aria-label', 'View dish image');
+                
+                // Insert eye icon after the menu item name
+                const itemName = item.querySelector('.menu-item-name');
+                if (itemName) {
+                    itemName.appendChild(eyeIcon);
+                }
+                
+                // Add click event to eye icon
+                eyeIcon.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const imageUrl = item.getAttribute('data-image');
+                    
+                    if (imageUrl && imageUrl.trim() !== '') {
+                        previewImage.src = imageUrl;
+                        previewImage.alt = item.querySelector('.menu-item-name')?.textContent || 'Dish image';
+                        overlay.style.display = 'block';
+                        previewContainer.style.display = 'block';
+                        document.body.style.overflow = 'hidden'; // Prevent scrolling
+                    }
+                });
+            });
+            
+            // Close functionality
+            function closePreview() {
+                overlay.style.display = 'none';
+                previewContainer.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+            
+            closeButton.addEventListener('click', closePreview);
+            overlay.addEventListener('click', closePreview);
+            
+            // Close with Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closePreview();
+                }
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu after clicking
+                    mainNav.classList.remove('active');
+                    const icon = mobileMenuToggle.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
